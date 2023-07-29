@@ -1,0 +1,14 @@
+.contenedorImg {
+  height: fit-content !important;
+  align-self: center !important;
+}
+
+.contadorCart{
+  
+}
+
+@media (max-width: 992px) {
+  .contenedorImg {
+    align-self: unset !important;
+  }
+}
