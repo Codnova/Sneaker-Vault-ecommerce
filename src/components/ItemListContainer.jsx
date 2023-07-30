@@ -3,7 +3,7 @@
 import Container from "react-bootstrap/esm/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ItemCount from "./ItemCount.jsx";
+import ItemCount from './ItemCount';
 import "../styles/ItemListContainer.css";
 
 function ItemListContainer ({greetings}) {
@@ -18,7 +18,7 @@ function ItemListContainer ({greetings}) {
 				</Row>
 				<Row>
 					<Col>
-						<ItemCount initial={1} stock={5} onAdd={(quantity) => console.log ("cantidad agregada", quantity)} />
+					<ItemCount initial={1} stock={5} onAdd={(quantity) => alert("cantidad agregada " + quantity)} />
 					</Col>
 				</Row>
 			</Container>

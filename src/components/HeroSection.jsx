@@ -1,10 +1,8 @@
-import Container from "react-bootstrap/esm/Container";
 import Image  from 'react-bootstrap/Image';
 import shoeImage from '../assets/whiteShoes.jpg';
 import Button from "react-bootstrap/Button";
 import "../styles/HeroSection.css";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 function HeroSection () {
 	
