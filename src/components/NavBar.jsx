@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import CartWidget from './CartWidget';
+import CartWidget from './cartWidget';
 import logo from '../assets/logo.svg';
 
 

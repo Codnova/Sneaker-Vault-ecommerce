@@ -1,17 +1,21 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import HeroSection from "./components/HeroSection";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/navBar';
+import ItemListContainer from './components/itemListContainer';
+import HeroSection from './components/heroSection';
+import ItemDetailList from './components/itemDetailList';
 
 function App() {
   return (
     <div>
       <header>
         <NavBar/>
+      </header>
+      <main>
         <HeroSection />
         <ItemListContainer greetings={"Welcome"}/>
-        
-      </header>
+        <ItemDetailList></ItemDetailList>
+      </main>
+      
     </div>
   );
 }

@@ -3,26 +3,41 @@
 import Container from "react-bootstrap/esm/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ItemCount from './ItemCount';
-import "../styles/ItemListContainer.css";
+import ItemList from './itemList';
+import {getProducts} from "./asyncMock";
+import { useState, useEffect } from 'react';
+import '../styles/ItemListContainer.css';
 
 function ItemListContainer ({greetings}) {
+
+	const [products, setProducts] = useState([]);
+
+	useEffect(() => {
+    // Obtenemos los productos de la API
+    
+		getProducts()
+			.then(response => {
+				setProducts(response);
+			})
+			.catch((error) => console.error(error));
+		
+  }, []);
 	
 	return (
-		<div>
-			<Container fluid>
+		
+			<Container >
 				<Row>
 					<Col>
-						<h1 className="text-center mt-3">{greetings}</h1>
+						<h1 className="text-center mt-5">{greetings}</h1>
 					</Col>
 				</Row>
-				<Row>
-					<Col>
-					<ItemCount initial={1} stock={5} onAdd={(quantity) => alert("cantidad agregada " + quantity)} />
-					</Col>
+				<Row className="">
+						<div className="d-flex p-5 gap-3 justify-content-center  flex-row flex-wrap">
+							<ItemList products={products} />
+						</div>
 				</Row>
 			</Container>
-		</div>
+		
 	)
 
 }
