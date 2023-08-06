@@ -83,7 +83,7 @@ const products =
     "title": "White Gold Plated Princess",
     "price": 9.99,
     "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-    "category": "woman",
+    "category": "women",
     "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
     "rating": {
       "rate": 3,
@@ -96,7 +96,7 @@ const products =
     "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
     "price": 10.99,
     "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-    "category": "woman",
+    "category": "women",
     "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
     "rating": {
       "rate": 1.9,
@@ -268,21 +268,21 @@ export function getProducts (){
    
     setTimeout(() => {
       resolve(products);
-    }, 1500);
+    }, 500);
 
   })
   
 }
 
-export function getProductsById (id){
-
+export function getProductsById (itemId){
+  console.log("el id que llega a busqueda es", itemId)
   return new Promise ((resolve) => {
    
     setTimeout(() => {
       resolve(
-        products.find(product => product.id === id)
+        products.find(product => product.id === itemId)
       );
-    }, 1500);
+    }, 500);
 
   })
   

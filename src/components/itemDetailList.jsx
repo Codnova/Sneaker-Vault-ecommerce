@@ -4,20 +4,25 @@ import Row from 'react-bootstrap/Row';
 import ItemDetailCard from './itemDetailCard';
 import { useState, useEffect } from 'react';
 import { getProductsById } from './asyncMock';
+import { useParams } from 'react-router-dom';
 
-
-function ItemDetailList({id}) {
+function ItemDetailList() {
 
   const [product, setProduct] = useState(null);
 
-	useEffect( () => {
-    // Obtenemos los productos de la API
-     getProductsById(id)
+  let {itemId} = useParams();
+  itemId = parseInt(itemId);
+	
+  useEffect( () => {
+    
+    getProductsById(itemId) // Obtenemos los productos de la API por su itemId
 			.then(response => {
 				setProduct(response);
 			})
 			.catch((error) => console.error(error));
-  }, [id]);
+  }, [itemId]);
+
+  console.log(itemId);
 
   return (
 

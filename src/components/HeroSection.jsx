@@ -16,7 +16,7 @@ function HeroSection () {
         </div>   
       <div className="contenedorTexto text-center">
         <h1 className="tituloHero text-light text-center">Step into Style</h1>
-        <Button className="mt-3" variant="light" size="lg">Shop Now</Button>
+        <Button className="mt-3" variant="light" size="lg" href='#h1'>Shop Now</Button>
       </div>   
 		</div>
 	)

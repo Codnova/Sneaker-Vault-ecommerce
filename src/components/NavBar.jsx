@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import CartWidget from './cartWidget';
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
 
@@ -13,15 +14,15 @@ function NavBar() {
 	return (
 		<Navbar expand="lg" data-bs-theme="dark" className="bg-dark p-3">
 			<Container>
-				<Navbar.Brand href="#home">
+				<Link to={'/'} className='navbar-brand'>
 					<Image src={logo} alt="sneaker vault" fluid/>
-				</Navbar.Brand>
+				</Link>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ms-auto gap-3">
-						<Nav.Link href="#home">Male</Nav.Link>
-						<Nav.Link href="#link">Female</Nav.Link>
-						<Nav.Link href="#link">All Products</Nav.Link>
+						<NavLink to={`/category/men`} className={"nav-link"} >Men</NavLink>
+						<NavLink to={`/category/women`} className={"nav-link"} >Women</NavLink>
+						<NavLink to={`/category/electronics`} className={"nav-link"} >Electronics</NavLink>
 						<Form className="me-auto d-flex">
 							<Form.Control
 								type="search"

@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 import '../styles/ItemCard.css'
+import { Link } from 'react-router-dom';
 
 function ItemCard({id, title, description, price, image, stock, rating}) {
   
@@ -22,7 +22,10 @@ function ItemCard({id, title, description, price, image, stock, rating}) {
         </Card.Body>
         <Card.Footer>
           <Stack className="mt-2 mb-2 gap-2">  
-            <Button className="" variant="dark">Ver Detalles</Button>
+            
+              <Link role='button' className='btn btn-dark' to={`/item/${id}`}>Ver Detalles</Link>
+            
+            
           </Stack>
         </Card.Footer>
       </Card> 

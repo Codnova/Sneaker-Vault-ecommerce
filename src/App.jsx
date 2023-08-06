@@ -1,23 +1,29 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/navBar';
-import ItemListContainer from './components/itemListContainer';
-import HeroSection from './components/heroSection';
-import ItemDetailList from './components/itemDetailList';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import ItemPage from './pages/ItemPage';
+import CategoryPage from './pages/CategoryPage';
 
 function App() {
   return (
     <div>
-      <header>
-        <NavBar/>
-      </header>
-      <main>
-        <HeroSection />
-        <ItemListContainer greetings={"Welcome"}/>
-        <ItemDetailList id={1} />
-      </main>
-      
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/category/:categoryId' element={<CategoryPage/>} />
+          <Route path='/item/:itemId' element={<ItemPage/>} />
+          <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
+        </Routes>
+      </BrowserRouter>
+  
     </div>
   );
 }
 
 export default App;
+
+
+//  <HeroSection />
+//<ItemListContainer greetings={"Welcome"}/>
+//<ItemDetailList id={1} />
