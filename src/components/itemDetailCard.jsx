@@ -4,6 +4,11 @@ import ItemCount from './itemCount';
 import '../styles/ItemCard.css'
 
 function ItemDetailCard({product}) {
+
+  if (!product) {
+    return <h2 className='text-center'>Loading...</h2>
+  }
+
   console.log(product)
   return (
       <Card className="h-100" style={{ width: '22rem' }}>

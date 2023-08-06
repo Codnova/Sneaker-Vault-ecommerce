@@ -1,17 +1,17 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-import ItemCount from './itemCount';
 import '../styles/ItemCard.css'
 
 function ItemCard({id, title, description, price, image, stock, rating}) {
+  
   return (
       <Card className="h-100" style={{ width: '18rem' }}>
         <Card.Img variant="top" src={image} style={{padding:'2rem', maxHeight:'18.75rem', aspectRatio: "1/1"}}  />
         <Card.Body>
           <Card.Title className="cardTitle">{title}</Card.Title>
           <Card.Text className="cardText">
-            {description}
+            
           </Card.Text>
           <Card.Text>
             <strong>Price: ${price}</strong> <span className="text-body-secondary">({stock} in stock)</span>
@@ -23,7 +23,6 @@ function ItemCard({id, title, description, price, image, stock, rating}) {
         <Card.Footer>
           <Stack className="mt-2 mb-2 gap-2">  
             <Button className="" variant="dark">Ver Detalles</Button>
-            <ItemCount hidden={true} initial={1} stock={stock} onAdd={(quantity) => alert("cantidad agregada " + quantity)} />  
           </Stack>
         </Card.Footer>
       </Card> 

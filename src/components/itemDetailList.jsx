@@ -6,24 +6,18 @@ import { useState, useEffect } from 'react';
 import { getProductsById } from './asyncMock';
 
 
-function ItemDetailList() {
+function ItemDetailList({id}) {
 
-  const [product, setProduct] = useState(0);
+  const [product, setProduct] = useState(null);
 
-	useEffect(() => {
+	useEffect( () => {
     // Obtenemos los productos de la API
-    getProductsById(1)
+     getProductsById(id)
 			.then(response => {
 				setProduct(response);
 			})
 			.catch((error) => console.error(error));
-  }, []);
-  
-  if (!product) { // If product is null, return loading state
-    return <div>Loading...</div>
-  }
-
-  console.log(product.rating.rate);
+  }, [id]);
 
   return (
 

@@ -2,8 +2,10 @@ import ItemCard from './itemCard';
 import Col from 'react-bootstrap/Col';
 
 function ItemList ({products}) {
-  
-  console.log(products);
+
+  if (!products) {
+    return <h1 className='text-center'>Loading...</h1>
+  }
 
   return (
     <>

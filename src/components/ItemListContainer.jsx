@@ -14,7 +14,6 @@ function ItemListContainer ({greetings}) {
 
 	useEffect(() => {
     // Obtenemos los productos de la API
-    
 		getProducts()
 			.then(response => {
 				setProducts(response);
@@ -25,18 +24,18 @@ function ItemListContainer ({greetings}) {
 	
 	return (
 		
-			<Container >
-				<Row>
-					<Col>
-						<h1 className="text-center mt-5">{greetings}</h1>
-					</Col>
-				</Row>
-				<Row className="">
-						<div className="d-flex p-5 gap-3 justify-content-center  flex-row flex-wrap">
-							<ItemList products={products} />
-						</div>
-				</Row>
-			</Container>
+		<Container >
+			<Row>
+				<Col>
+					<h1 className="text-center mt-5">{greetings}</h1>
+				</Col>
+			</Row>
+			<Row className="">
+					<div className="d-flex p-5 gap-3 justify-content-center  flex-row flex-wrap">
+						<ItemList products={products} />
+					</div>
+			</Row>
+		</Container>
 		
 	)
 

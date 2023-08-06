@@ -13,7 +13,7 @@ function App() {
       <main>
         <HeroSection />
         <ItemListContainer greetings={"Welcome"}/>
-        <ItemDetailList></ItemDetailList>
+        <ItemDetailList id={1} />
       </main>
       
     </div>
