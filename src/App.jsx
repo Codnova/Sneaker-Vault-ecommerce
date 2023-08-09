@@ -3,12 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import ItemPage from './pages/ItemPage';
 import CategoryPage from './pages/CategoryPage';
+import NavBar from './components/navBar';
 
 function App() {
   return (
     <div>
 
       <BrowserRouter>
+        <NavBar/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/category/:categoryId' element={<CategoryPage/>} />

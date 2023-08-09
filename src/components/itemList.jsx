@@ -1,10 +1,16 @@
 import ItemCard from './itemCard';
+import Spinner from 'react-bootstrap/Spinner';
 import Col from 'react-bootstrap/Col';
 
 function ItemList ({products}) {
 
   if (!products) {
-    return <h1 className='text-center'>Loading...</h1>
+    return (
+      <Spinner animation="border" role="status">
+       
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    )
   }
 
   return (

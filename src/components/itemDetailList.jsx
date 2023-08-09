@@ -22,8 +22,6 @@ function ItemDetailList() {
 			.catch((error) => console.error(error));
   }, [itemId]);
 
-  console.log(itemId);
-
   return (
 
     <Container >

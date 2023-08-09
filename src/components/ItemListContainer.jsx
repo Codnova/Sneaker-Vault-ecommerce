@@ -9,7 +9,7 @@ import '../styles/ItemListContainer.css';
 
 function ItemListContainer ({greetings}) {
 
-	const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState(null);
 	const {categoryId} = useParams();
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ function ItemListContainer ({greetings}) {
   }, [categoryId]);
 
 	if (!greetings) {
-		greetings =  categoryId.toLocaleUpperCase();
+		greetings =  categoryId.toLocaleUpperCase(); // Para mostrar el nombre de la categoria en la pagina
 	}
 	
 	return (
@@ -32,11 +32,11 @@ function ItemListContainer ({greetings}) {
 		<Container >
 			<Row>
 				<Col>
-					<h1 id="h1" className="text-center mt-5">{greetings}</h1>
+					<h1 id="h1" className="text-center mt-3">{greetings}</h1>
 				</Col>
 			</Row>
 			<Row className="">
-					<div className="d-flex p-5 gap-3 justify-content-center  flex-row flex-wrap">
+					<div className="d-flex p-4 gap-3 justify-content-center  flex-row flex-wrap">
 						<ItemList products={products} />
 					</div>
 			</Row>

@@ -10,8 +10,8 @@ function ItemCard({id, title, description, price, image, stock, rating}) {
         <Card.Img variant="top" src={image} style={{padding:'2rem', maxHeight:'18.75rem', aspectRatio: "1/1"}}  />
         <Card.Body>
           <Card.Title className="cardTitle">{title}</Card.Title>
-          <Card.Text className="cardText">
-            
+          <Card.Text className="cardText" style={{ WebkitLineClamp:'2'}}>
+            {description}
           </Card.Text>
           <Card.Text>
             <strong>Price: ${price}</strong> <span className="text-body-secondary">({stock} in stock)</span>

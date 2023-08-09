@@ -1,4 +1,3 @@
-import NavBar from "../components/navBar";
 import ItemDetailList from "../components/itemDetailList";
 
 function ItemPage () {
@@ -6,7 +5,6 @@ function ItemPage () {
   return (
     
     <div>
-      <NavBar />
       <ItemDetailList />
     </div>
   

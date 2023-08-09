@@ -35,7 +35,7 @@ function ItemCount({initial, stock, onAdd}) {
       <Button id='decrease' onClick={handleDecrease} variant="dark">-</Button>
       <Button disabled variant="light">{count}</Button>
       <Button id='increase' onClick={handleIncrease} variant="dark">+</Button>
-      <Button id='addCart' disabled={!stock} onClick={()=> onAdd(count)} variant="dark">Add to cart</Button>
+      <Button id='addCart' variant="dark" disabled={!stock} onClick={()=> onAdd(count)}>Add to cart</Button>
     </ButtonGroup>
   )
 }

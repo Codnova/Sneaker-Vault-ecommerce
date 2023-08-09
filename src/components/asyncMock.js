@@ -268,7 +268,7 @@ export function getProducts (){
    
     setTimeout(() => {
       resolve(products);
-    }, 500);
+    }, 1000);
 
   })
   
@@ -282,7 +282,7 @@ export function getProductsById (itemId){
       resolve(
         products.find(product => product.id === itemId)
       );
-    }, 500);
+    }, 1000);
 
   })
   
@@ -296,7 +296,7 @@ export function getProductsByCategory (category){
       resolve(
         products.filter(product => product.category === category)
       );
-    }, 500);
+    }, 1000);
 
   })
   
