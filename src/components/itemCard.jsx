@@ -22,10 +22,7 @@ function ItemCard({id, title, description, price, image, stock, rating}) {
         </Card.Body>
         <Card.Footer>
           <Stack className="mt-2 mb-2 gap-2">  
-            
-              <Link role='button' className='btn btn-dark' to={`/item/${id}`}>Ver Detalles</Link>
-            
-            
+              <Link role='button' className='btn btn-dark' to={`/item/${id}`}>Ver Detalles</Link> 
           </Stack>
         </Card.Footer>
       </Card> 

@@ -32,7 +32,8 @@ function NavBar() {
 							/>
 							<Button variant="outline-light">Search</Button>
 						</Form>
-						<CartWidget />
+						<Link to={'/cart'}><CartWidget /></Link>
+						
 					</Nav>
 					
 				</Navbar.Collapse>

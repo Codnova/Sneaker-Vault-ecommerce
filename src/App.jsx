@@ -4,19 +4,24 @@ import Home from './pages/Home';
 import ItemPage from './pages/ItemPage';
 import CategoryPage from './pages/CategoryPage';
 import NavBar from './components/navBar';
+import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <div>
 
       <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/category/:categoryId' element={<CategoryPage/>} />
-          <Route path='/item/:itemId' element={<ItemPage/>} />
-          <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
-        </Routes>
+        <CartProvider>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/category/:categoryId' element={<CategoryPage/>} />
+            <Route path='/item/:itemId' element={<ItemPage/>} />
+            <Route path='/cart' element={<CartPage/>} />
+            <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
   
     </div>
@@ -24,8 +29,3 @@ function App() {
 }
 
 export default App;
-
-
-//  <HeroSection />
-//<ItemListContainer greetings={"Welcome"}/>
-//<ItemDetailList id={1} />
