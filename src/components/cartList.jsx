@@ -1,21 +1,25 @@
 import { Container, Row, Col, Table, Image, Button } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
-import { useContext, useState } from "react";
-import ItemCard from "./itemCard";
-
-
+import { useContext } from "react";
+import "../styles/CartList.css";
 
 function CartList() {
 
-  const {cart, clearCart, removeItem, total, totalQuantity} = useContext(CartContext)
+  const {cart, clearCart, removeItem, total} = useContext(CartContext)
 
   console.log("Carrito en CartList", cart)
-  
-
 
   if (cart.length === 0) {
     return (
-      <h1 className="text-center mt-5">Your Cart is Empty</h1>
+
+      <Container>
+        <Row>
+          <Col>
+            <h1 className="text-center mt-5">Your Cart is Empty</h1>
+          </Col>
+        </Row>
+      </Container>
+      
     )
   }
 
@@ -29,11 +33,10 @@ function CartList() {
       </Row>
       <Row>
         <Col>
-          <span>Cart Items</span>
-          <Table>
+        <Table responsive hover size="sm">
             <thead>
               <tr>
-                <th>Item Image</th>
+                <th></th>
                 <th>Item Name</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
@@ -47,22 +50,28 @@ function CartList() {
                 <tr key={item.itemId}>
                   {console.log(item.itemId)}
                   <td><Image src={item.image} style={{maxWidth: '40px'}} /></td>
-                  <td>{item.title}</td>
+                  <td className="itemName">{item.title}</td>
                   <td>{item.quantity}</td>
-                  <td>{item.price}</td>
-                  <td>{item.quantity * item.price}</td>
-                  <td><Button onClick={()=> removeItem(item.itemId)} variant="dark">Remove</Button></td>
+                  <td>${item.price}</td>
+                  <td>${item.quantity * item.price}</td>
+                  <td><Button onClick={()=> removeItem(item)} variant="dark">Remove</Button></td>
                 </tr>
               ))
             }
             </tbody>
-          </Table>         
+          </Table> 
         </Col>
+        <Row>
+        <Col className="d-flex justify-content-center">
+          <Button variant="danger" onClick={ ()=> clearCart() } >Clear Cart</Button>
+        </Col>
+        </Row>
       </Row>
+      <hr/>
       <Row>
         <Col>
-          <h2>Grand Total</h2>
-          <bold></bold>
+          <h2 className="text-center mt-3">Grand Total</h2>
+          <h3 className="text-center mt-3"><span className="text-success">Total: ${total}</span></h3>
         </Col>
       </Row>
     </Container>
@@ -70,3 +79,4 @@ function CartList() {
 }
 
 export default CartList
+

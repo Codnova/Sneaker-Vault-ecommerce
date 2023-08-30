@@ -1,12 +1,14 @@
 
+import FooterWeb from "../components/footerWeb";
 import ItemListContainer from "../components/itemListContainer";
 
 function CategoryPage () {
 
   return (
-    <div>
+    <>
       <ItemListContainer />
-    </div>
+      <FooterWeb />
+    </>
     
     
 

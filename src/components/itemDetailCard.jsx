@@ -23,8 +23,6 @@ function ItemDetailCard({product}) {
 
   function handleOnAdd(quantity) {
 
-    console.log("quantity en handleOnAdd", quantity )
-
     setQuantity(quantity);
 
     const item = {
