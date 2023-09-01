@@ -1,78 +1,42 @@
-const asyncFunction = categoryId ? getProductsByCategory : getProducts;
-		asyncFunction(categoryId) // Obtenemos los productos de la API por su categoria
-			.then(response => {
-				setProducts(response);
-			})
-			.catch((error) => console.error(error));
+# Sneaker Vault Ecommerce Store
 
+## About the Project
 
-# Getting Started with Create React App
+Welcome to Sneaker Vault, your go-to ecommerce store featuring products from Fakestore! This project is built using ReactJS, React Bootstrap, React Router, and Firebase/Firestore.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The website landing page displays all the products and includes links to filter products by categories such as Men, Women, and Electronics. The site also features a cart and a checkout page for a complete shopping experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js
+- NPM
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Clone the repository
+2. Navigate to the project directory
+3. Install the dependencies
+4. Run the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Things I Learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project served as a fantastic learning experience for me. Specifically, it helped me to:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Understand ReactJS**: Grasped the core concepts of React, including JSX, props, and component-based architecture.
+- **Master React Hooks**: Leveraged React Hooks like `useState`, `useEffect`, and `useContext` to manage the state and side-effects in functional components.
+- **Learn Firebase/Firestore**: Integrated Firebase for backend services, and learned how to interact with Firestore for CRUD operations.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+Thank you for checking out Sneaker Vault! Feel free to contribute or open issues if you have any suggestions or problems.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+¡Gracias!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

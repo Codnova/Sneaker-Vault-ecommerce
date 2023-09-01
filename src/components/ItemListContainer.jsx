@@ -22,7 +22,6 @@ function ItemListContainer ({greetings}) {
 
 		getDocs(collectionRef)
 			.then(response => {
-				console.log("Response en ItemListContainer: ", response)
 				const productsAdapted = response.docs.map(doc =>{
 					const data = doc.data()
 					return {id: doc.id, ...data}

@@ -1,18 +1,14 @@
-import { Container, Row, Col, Table, Image, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import "../styles/CartList.css";
+import CartItem from "./cartItem";
 
 function CartList() {
-
-  const {cart, clearCart, removeItem, total} = useContext(CartContext)
-
-  console.log("Carrito en CartList", cart)
+  const { cart, clearCart, total } = useContext(CartContext);
 
   if (cart.length === 0) {
     return (
-
       <Container>
         <Row>
           <Col>
@@ -20,68 +16,36 @@ function CartList() {
           </Col>
         </Row>
       </Container>
-    
-    )
+    );
   }
 
   return (
-
     <Container>
       <Row>
         <Col>
           <h1 className="text-center mt-5">Your Cart</h1>
         </Col>
       </Row>
-      <Row>
-        <Col>
-        <Table responsive hover size="sm" className="mt-3">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Item Name</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Subtotal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-            {
-              cart.map( item => (
-                <tr key={item.itemId}>
-                  <td><Image src={item.image} style={{maxWidth: '40px'}} /></td>
-                  <td className="itemName">{item.title}</td>
-                  <td>{item.quantity}</td>
-                  <td>${item.price}</td>
-                  <td>${item.quantity * item.price}</td>
-                  <td><Button onClick={()=> removeItem(item)} variant="dark">Remove</Button></td>
-                </tr>
-              ))
-            }
-            </tbody>
-          </Table> 
+      {cart.map(item => (
+        <CartItem key={item.itemId} item={item} />
+      ))}
+      <Row className="d-flex justify-content-center flex-column align-items-center mt-3">
+        <Col xs={'auto'}>
+            <h3 className="text-center mb-2">Total: ${total}</h3>
         </Col>
-        <Row>
-          <Col className="d-flex justify-content-center">
-            <Button variant="danger" onClick={ ()=> clearCart() }>Clear Cart</Button>
-          </Col>
-        </Row>
-      </Row>
-      <hr/>
-      <Row>
-        <Col>
-          <h2 className="text-center mt-3">Grand Total</h2>
-          <h3 className="text-center mt-3"><span className="text-success">Total: ${total}</span></h3>
+        <Col xs={'auto'}>
+          <Link to="/checkout" className="btn btn-dark mb-2">
+            Checkout
+          </Link>
         </Col>
-      </Row>
-      <Row>
-        <Col className="d-flex justify-content-center">
-          <Link role='button' className='btn btn-dark btn-lg' to={`/checkout`}>Checkout</Link> 
+        <Col xs={'auto'}>
+          <Button variant="danger" onClick={() => clearCart()} className="mb-2">
+            Clear Cart
+          </Button>
         </Col>
       </Row>
     </Container>
-  )
+  );
 }
 
-export default CartList
-
+export default CartList;
