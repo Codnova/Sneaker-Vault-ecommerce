@@ -1,3 +1,11 @@
+const asyncFunction = categoryId ? getProductsByCategory : getProducts;
+		asyncFunction(categoryId) // Obtenemos los productos de la API por su categoria
+			.then(response => {
+				setProducts(response);
+			})
+			.catch((error) => console.error(error));
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

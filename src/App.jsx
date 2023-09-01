@@ -5,6 +5,7 @@ import ItemPage from './pages/ItemPage';
 import CategoryPage from './pages/CategoryPage';
 import NavBar from './components/navBar';
 import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage' 
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
             <Route path='/category/:categoryId' element={<CategoryPage/>} />
             <Route path='/item/:itemId' element={<ItemPage/>} />
             <Route path='/cart' element={<CartPage/>} />
-            <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
+            <Route path='/checkout' element={<CheckoutPage/>} />
+            <Route path='*' element={<h1 className='text-center mt-3'>404 NOT FOUND</h1>} />
           </Routes>
         </CartProvider>
       </BrowserRouter>

@@ -22,18 +22,14 @@ function ItemDetailCard({product}) {
   }
 
   function handleOnAdd(quantity) {
-
     setQuantity(quantity);
-
     const item = {
       itemId: product.id,
       title: product.title,
       price: product.price,
       image: product.image,
     }
-
     addItem(item, quantity);
-
   }
 
   return (
@@ -48,13 +44,13 @@ function ItemDetailCard({product}) {
             <strong>Price: ${product.price}</strong> <span className="text-body-secondary">({product.stock} in stock)</span>
           </Card.Text>
           <Card.Text>
-            <strong>Rating: {product.rating.rate}⭐</strong> <span className="text-body-secondary">({product.rating.count})</span>
+            <strong>Rating: {product.rating?.rate || 'N/A'}⭐</strong> <span className="text-body-secondary">({product.rating?.count || 'N/A'})</span>
           </Card.Text>
         </Card.Body>
         <Card.Footer>
           <Stack className="mt-2 mb-2 gap-2">  
             {
-              quantity > 0 ? (<Link role='button' className='btn btn-dark' to={'/cart'}>Checkout</Link> ) : (<ItemCount initial={1} stock={product.stock} onAdd={handleOnAdd} />)
+              quantity > 0 ? (<Link role='button' className='btn btn-dark' to={'/cart'}>Go to Cart</Link> ) : (<ItemCount initial={1} stock={product.stock} onAdd={handleOnAdd} />)
             }
           </Stack>
         </Card.Footer>

@@ -1,6 +1,7 @@
 import { Container, Row, Col, Table, Image, Button } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import "../styles/CartList.css";
 
 function CartList() {
@@ -19,7 +20,7 @@ function CartList() {
           </Col>
         </Row>
       </Container>
-      
+    
     )
   }
 
@@ -33,7 +34,7 @@ function CartList() {
       </Row>
       <Row>
         <Col>
-        <Table responsive hover size="sm">
+        <Table responsive hover size="sm" className="mt-3">
             <thead>
               <tr>
                 <th></th>
@@ -48,7 +49,6 @@ function CartList() {
             {
               cart.map( item => (
                 <tr key={item.itemId}>
-                  {console.log(item.itemId)}
                   <td><Image src={item.image} style={{maxWidth: '40px'}} /></td>
                   <td className="itemName">{item.title}</td>
                   <td>{item.quantity}</td>
@@ -62,9 +62,9 @@ function CartList() {
           </Table> 
         </Col>
         <Row>
-        <Col className="d-flex justify-content-center">
-          <Button variant="danger" onClick={ ()=> clearCart() } >Clear Cart</Button>
-        </Col>
+          <Col className="d-flex justify-content-center">
+            <Button variant="danger" onClick={ ()=> clearCart() }>Clear Cart</Button>
+          </Col>
         </Row>
       </Row>
       <hr/>
@@ -72,6 +72,11 @@ function CartList() {
         <Col>
           <h2 className="text-center mt-3">Grand Total</h2>
           <h3 className="text-center mt-3"><span className="text-success">Total: ${total}</span></h3>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="d-flex justify-content-center">
+          <Link role='button' className='btn btn-dark btn-lg' to={`/checkout`}>Checkout</Link> 
         </Col>
       </Row>
     </Container>
