@@ -1,6 +1,6 @@
 
-import Checkout from "../components/checkout";
-import FooterWeb from "../components/footerWeb";
+import Checkout from "../components/Checkout";
+import FooterWeb from "../components/FooterWeb";
 
 function CategoryPage () {
 

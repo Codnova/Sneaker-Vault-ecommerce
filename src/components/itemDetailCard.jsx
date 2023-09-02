@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
-import ItemCount from './itemCount';
+import ItemCount from './ItemCount';
 import Spinner from 'react-bootstrap/Spinner';
 import {Link}  from 'react-router-dom/dist/';
 import { CartContext } from '../context/CartContext';

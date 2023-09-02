@@ -1,6 +1,6 @@
 
-import FooterWeb from "../components/footerWeb";
-import ItemListContainer from "../components/itemListContainer";
+import FooterWeb from "../components/FooterWeb";
+import ItemListContainer from "../components/ItemListContainer";
 
 function CategoryPage () {
 

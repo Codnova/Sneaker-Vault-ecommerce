@@ -1,4 +1,4 @@
-import CartList from "../components/cartList"
+import CartList from "../components/CartList"
 
 function CartPage() {
   return (

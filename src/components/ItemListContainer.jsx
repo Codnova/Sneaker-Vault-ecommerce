@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/esm/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ItemList from './itemList';
+import ItemList from './ItemList';
 import  {getDocs, collection, query, where} from 'firebase/firestore';
 import {db} from '../services/firebase'
 import { useState, useEffect } from 'react';

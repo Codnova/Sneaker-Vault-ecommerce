@@ -1,7 +1,7 @@
 import Col from 'react-bootstrap/Col';
 import Container from "react-bootstrap/esm/Container";
 import Row from 'react-bootstrap/Row';
-import ItemDetailCard from './itemDetailCard';
+import ItemDetailCard from './ItemDetailCard';
 import Spinner  from 'react-bootstrap/Spinner';
 import { useState, useEffect } from 'react';
 import  {getDoc, doc} from 'firebase/firestore';

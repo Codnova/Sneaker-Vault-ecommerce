@@ -1,4 +1,4 @@
-import ItemCard from './itemCard';
+import ItemCard from './ItemCard';
 import Spinner from 'react-bootstrap/Spinner';
 import Col from 'react-bootstrap/Col';
 

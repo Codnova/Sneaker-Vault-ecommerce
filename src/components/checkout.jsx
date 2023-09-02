@@ -1,5 +1,5 @@
 import { Container, Row, Col, Spinner, Image} from "react-bootstrap";
-import CheckoutForm from "./checkoutForm";
+import CheckoutForm from "./CheckoutForm";
 import success from "../assets/success.gif"
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";

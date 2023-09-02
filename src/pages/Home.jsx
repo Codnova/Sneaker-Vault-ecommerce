@@ -1,6 +1,6 @@
-import FooterWeb from "../components/footerWeb";
-import HeroSection from "../components/heroSection";
-import ItemListContainer from "../components/itemListContainer";
+import FooterWeb from "../components/FooterWeb";
+import HeroSection from "../components/HeroSection";
+import ItemListContainer from "../components/ItemListContainer";
 
 function Home () {
 

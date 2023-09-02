@@ -1,5 +1,5 @@
-import FooterWeb from "../components/footerWeb";
-import ItemDetailList from "../components/itemDetailList";
+import FooterWeb from "../components/FooterWeb";
+import ItemDetailList from "../components/ItemDetailList";
 
 function ItemPage () {
 
